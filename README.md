@@ -3,8 +3,11 @@
 - Create React App
 - Configured Tailwind
 - Added a simple Netflix clone layout
+- routing
 - Header
 - Login Form
+- useRef
+- Form Validation
 
 # Features
 
