@@ -47,7 +47,7 @@ const Login = () => {
             )}
             <button className='bg-red-700  p-2 my-4 rounded-md w-full font-bold'>Sign In</button>
             <h3 className='mx-36 text-lg text-neutral-500'>OR</h3>
-            <p className='py-4 cursor-pointer' onClick={toggleSignInForm}>{isSignInForm ? "New to netflix? Sign Up Now" : "New to netflix? Sign In Now"}</p>
+            <p className='py-4 cursor-pointer' onClick={toggleSignInForm}>{isSignInForm ?  "New to netflix? Sign Up Now"  : <span className='font-bold'>Sign In Now</span>}</p>
         </form>
 
     </div>
