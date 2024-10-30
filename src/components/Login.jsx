@@ -14,13 +14,14 @@ const Login = () => {
     }
     const email = useRef(null);
     const password = useRef(null);
+    const confirmPassword = useRef(null);
 
-    // Check validity
+    // Check validation
     const handleButtonClick = () => {
         console.log(email.current.value);
         console.log(password.current.value);
 
-        const message = checkValidata(email.current.value,  password.current.value);
+        const message = checkValidata(email.current.value,  password.current.value, confirmPassword.current.value);
         setErrorMessage(message);
 
     }
@@ -59,7 +60,7 @@ const Login = () => {
                 <input 
                     type="password" 
                     placeholder='Confirm Password' 
-                    
+                    ref={confirmPassword}
                     className='p-4 my-2 rounded-md bg-slate-700 bg-opacity-60 w-full'
                 />
             )}
