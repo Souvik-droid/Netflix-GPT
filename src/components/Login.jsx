@@ -2,29 +2,67 @@ import React, { useRef, useState } from 'react'
 import { Login_bg } from '../utils/constant'
 import Header from './Header'
 import { checkValidata } from '../utils/Validate';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../utils/firebase'
 
 const Login = () => {
 
     const [isSignInForm, setIsSignInForm] = useState(true);
     const [errorMessage, setErrorMessage] = useState(null);
 
-    // Sign in || Sign Up
-    const toggleSignInForm = () => {
-        setIsSignInForm(!isSignInForm);
-    }
     const email = useRef(null);
     const password = useRef(null);
-    const confirmPassword = useRef(null);
+    //const confirmPassword = useRef(null);
 
     // Check validation
     const handleButtonClick = () => {
-        console.log(email.current.value);
-        console.log(password.current.value);
-
-        const message = checkValidata(email.current.value,  password.current.value, confirmPassword.current.value);
+        const message = checkValidata(
+            email.current.value,
+            password.current.value
+            //, confirmPassword.current.value
+        );
         setErrorMessage(message);
 
+        if(message) return;
+        console.log(email)
+
+        //Sign up Logic here
+
+        if(!isSignInForm){
+            createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+            .then((userCredential) => {
+                // Sign up
+                const user = userCredential.user;
+                console.log(user);
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                setErrorMessage(errorCode+"-"+errorMessage);
+            });
+        } else {
+            //Sign in Logic here
+            signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                console.log(user);
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                setErrorMessage(errorCode+"-"+errorMessage)
+
+            });
+            
+        }
+    };
+
+    // Sign in || Sign Up button
+    const toggleSignInForm = () => {
+        setIsSignInForm(!isSignInForm);
     }
+
 
 
   return (
@@ -34,7 +72,7 @@ const Login = () => {
             className="absolute" 
             src={Login_bg} alt="login background" 
         />
-        <form onSubmit={(e) => e.preventDefault()} className=' bg-black text-white absolute p-12 w-1/3 my-32 mx-auto right-0 left-0 bg-opacity-80 rounded-md'>
+        <form onSubmit={(e) => e.preventDefault()} className=' bg-black text-white absolute p-10 w-1/3 my-32 mx-auto right-0 left-0 bg-opacity-80 rounded-md'>
             <h1 className=' font-bold text-3xl py-2 '>{isSignInForm ? "Sign In" : "Sign Up"}</h1>
             
             {!isSignInForm && (
@@ -49,21 +87,14 @@ const Login = () => {
                  ref={email} 
                  placeholder='Email or mobile number ' 
                  className='p-4 my-2 rounded-md bg-slate-700 bg-opacity-60 w-full'
+                 
             />
             <input 
                 type="password" 
                 ref={password}
                 placeholder='Password' 
                 className='p-4 my-2 rounded-md bg-slate-700 bg-opacity-60 w-full'
-            />
-            {!isSignInForm && (
-                <input 
-                    type="password" 
-                    placeholder='Confirm Password' 
-                    ref={confirmPassword}
-                    className='p-4 my-2 rounded-md bg-slate-700 bg-opacity-60 w-full'
-                />
-            )}
+            />            
             <p className='text-red-600'>{errorMessage}</p>
             <button className='bg-red-700  p-2 my-3 rounded-md w-full font-bold' onClick={handleButtonClick}>{isSignInForm?"Sign In":"Sign Up"}</button>
             
@@ -81,3 +112,12 @@ const Login = () => {
 }
 
 export default Login
+
+// {!isSignInForm && (
+//     <input 
+//         type="password" 
+//         placeholder='Confirm Password' 
+//         ref={confirmPassword}
+//         className='p-4 my-2 rounded-md bg-slate-700 bg-opacity-60 w-full'
+//     />
+// )}

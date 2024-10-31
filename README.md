@@ -8,6 +8,10 @@
 - Login Form
 - useRef
 - Form Validation
+- Authentication(Firebase)
+    - firebase.js to connect to firebase fro react project
+- Deploy the project
+- Create a sign up user account
 
 # Features
 
