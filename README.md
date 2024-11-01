@@ -10,8 +10,11 @@
 - Form Validation
 - Authentication(Firebase)
     - firebase.js to connect to firebase fro react project
-- Deploy the project
+- Deploy the project to production
 - Create a sign up user account
+- Implement Sign In user Api
+- Created our redux store with user slice
+- 
 
 # Features
 
