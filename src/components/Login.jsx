@@ -4,17 +4,20 @@ import Header from './Header'
 import { checkValidata } from '../utils/Validate';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../utils/firebase'
-import { useNavigate } from 'react-router-dom';
+import { updateProfile } from 'firebase/auth'; 
+import { useDispatch } from 'react-redux';
+import { addUser } from '../utils/userSlice';
 
 const Login = () => {
 
     const [isSignInForm, setIsSignInForm] = useState(true);
     const [errorMessage, setErrorMessage] = useState(null);
 
-    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const email = useRef(null);
     const password = useRef(null);
+    const name = useRef(null);
     //const confirmPassword = useRef(null);
 
     // Check validation
@@ -35,8 +38,25 @@ const Login = () => {
             .then((userCredential) => {
                 // Sign up
                 const user = userCredential.user;
-                console.log(user);
-                navigate('/browse');
+
+                updateProfile(user, {
+                    displayName: name.current.value, photoURL: "https://thumbs.dreamstime.com/b/funny-avatar-cunning-emoji-flat-vector-illustration-comic-yellow-social-media-sticker-humorous-cartoon-face-smiling-mouth-162122340.jpg"
+                  }).then(() => {
+                    // Profile updated!
+                    const {uid, email, displayName, photoURL} = auth.currentUser;
+                    dispatch(
+                        addUser({
+                          uid: uid,
+                          email: email, 
+                          displayName: displayName, 
+                          photoURL: photoURL
+                      }));
+                  }).catch((error) => {
+                    // An error occurred
+                    setErrorMessage(error.message);
+                    //navigate('/error');
+                  });
+
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -48,9 +68,7 @@ const Login = () => {
             signInWithEmailAndPassword(auth, email.current.value, password.current.value)
             .then((userCredential) => {
                 // Signed in
-                const user = userCredential.user;
-                console.log(user);
-                navigate('/browse');
+                //const user = userCredential.user;                
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -83,6 +101,7 @@ const Login = () => {
                 <input
                     type="text" 
                     placeholder='Name' 
+                    ref={name}
                     className='p-4 my-2 rounded-md bg-slate-700 bg-opacity-60 w-full'
                 />
             )}

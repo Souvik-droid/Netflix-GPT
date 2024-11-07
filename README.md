@@ -14,7 +14,11 @@
 - Create a sign up user account
 - Implement Sign In user Api
 - Created our redux store with user slice
-- 
+- Update Profile
+- Bug Fix
+    - Sign up user display name and profile picture update
+    - if the user is not logged in, redirect browse to login page and vice-versa
+- add hardcoded values to const values
 
 # Features
 
