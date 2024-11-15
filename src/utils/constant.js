@@ -5,3 +5,11 @@ export const LOGO = "https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897
 export const User_Logo = "https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.jpg";
 
 export const Clone_Logo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOq_RTHxwqoeye8ZtwnMqDjv5HHBQ3syb52A&s";
+
+export const API_Options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YjM4ODczMzQ1NzcxODllYmM4OTIzNTNhYWZmOTIyNSIsIm5iZiI6MTczMDk5MjE4NC4wNDEyMzI4LCJzdWIiOiI2NzJiNjNmZjJmNjRlYmU4YzhlNGU2ZWEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.h_kMgIZZvxs-UmhZhBsuNBw1UoJuP0i1cRJXEM7YdnI'
+    }
+  };

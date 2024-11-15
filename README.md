@@ -33,6 +33,8 @@
         - Movie Title & Details
         - Movie suggestions
             - MoviesLists * N
+        - Register in TMDB API & create an app and get access token
+        - fetch data from TMDB API "now playing" list
     
 - Netflix GPT
     - Search Bar
