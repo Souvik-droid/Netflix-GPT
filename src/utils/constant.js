@@ -12,4 +12,8 @@ export const API_Options = {
       accept: 'application/json',
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YjM4ODczMzQ1NzcxODllYmM4OTIzNTNhYWZmOTIyNSIsIm5iZiI6MTczMDk5MjE4NC4wNDEyMzI4LCJzdWIiOiI2NzJiNjNmZjJmNjRlYmU4YzhlNGU2ZWEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.h_kMgIZZvxs-UmhZhBsuNBw1UoJuP0i1cRJXEM7YdnI'
     }
-  };
+  }; 
+
+export const movie_API_url = 'https://api.themoviedb.org/3/movie/now_playing?page=1';
+
+  export const video_API_url = 'https://api.themoviedb.org/3/movie/912649/videos?language=en-US';
