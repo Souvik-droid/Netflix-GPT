@@ -10,6 +10,7 @@ const useMovieVideo = (movie_id) => {
     const getMovieVideo = async() => {
 
         if(!movie_id) return;
+
         const data = await fetch("https://api.themoviedb.org/3/movie/"+ movie_id +'/videos?language=en-US', API_Options);
         const json = await data.json();
 
