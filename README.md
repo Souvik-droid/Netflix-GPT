@@ -19,6 +19,15 @@
     - Sign up user display name and profile picture update
     - if the user is not logged in, redirect browse to login page and vice-versa
 - add hardcoded values to const values
+- Fetch data from TMBD now playing movies API
+    - Custom hook for nowPlaingMovies API
+- Setting up a redux store
+    - Create Movie Slice
+    - Update store with movie list
+- Planning for main container and secondary container
+- Fetch data for Trailer Vdeo
+- Update store with Trailer video data
+- Embedded the youtube video and make it autoplay and mute
 
 # Features
 
