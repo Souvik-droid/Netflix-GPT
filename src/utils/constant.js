@@ -14,6 +14,12 @@ export const API_Options = {
     }
   }; 
 
+export const IMG_CDN_URL = 'https://image.tmdb.org/t/p/w200/'
+
 export const movie_API_url = 'https://api.themoviedb.org/3/movie/now_playing?page=1';
 
-  export const video_API_url = 'https://api.themoviedb.org/3/movie/912649/videos?language=en-US';
+export const popular_API_url = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
+
+export const topRated_API_url = 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1';
+
+export const upcoming_API_url = 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1';

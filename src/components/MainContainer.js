@@ -12,7 +12,7 @@ const MainContainer = () => {
   //console.log("main",mainMovie)
   const { title, overview, id } = mainMovie;
   //const { poster_path, backdrop_path } = mainMovie;
-  console.log(title, overview, id)
+  //console.log(title, overview, id)
 
   return (
     <div>

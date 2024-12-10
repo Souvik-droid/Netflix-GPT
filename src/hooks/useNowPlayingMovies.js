@@ -12,7 +12,7 @@ const useNowPlayingMovies = () => {
       
       const data = await fetch(movie_API_url, API_Options)
       const json = await data.json();
-      console.log('getplay', json.results);
+      //console.log('getplay', json.results);
   
       //putting the data in the store
       dispatch(addNowPlayingMovies(json.results))

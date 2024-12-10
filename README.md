@@ -21,6 +21,11 @@
 - add hardcoded values to const values
 - Fetch data from TMBD now playing movies API
     - Custom hook for nowPlaingMovies API
+    - Popular movies
+    - video data
+    - Top Rated
+    - Upcoming Movies
+
 - Setting up a redux store
     - Create Movie Slice
     - Update store with movie list
@@ -28,6 +33,9 @@
 - Fetch data for Trailer Vdeo
 - Update store with Trailer video data
 - Embedded the youtube video and make it autoplay and mute
+- Developed the secondary container
+- built a slider on the movie list
+
 
 # Features
 
