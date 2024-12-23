@@ -11,7 +11,7 @@ const Error = () => {
 
     return (
         <div className="bg-black text-white min-h-screen flex flex-col justify-center items-center p-4">
-            <h1 className="text-6xl font-bold text-red-600 mb-6">Oops!</h1>
+            <h1 className="text-6xl font-bold text-red-600 mb-6">Oops!!</h1>
             <p className="text-2xl font-semibold mb-4 text-center">
                 Something went wrong. <br />
                 We couldn't complete your request.

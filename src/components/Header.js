@@ -7,6 +7,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react'
 import { addUser, removeUser } from '../utils/userSlice';
+import { gptToggle } from '../utils/gptSlice'
 
 
 const Header = () => {
@@ -23,6 +24,11 @@ const Header = () => {
     // An error happened.
     navigate('/error')
   });
+  }
+
+  const onSearchToggle = () => {
+    //Toggle
+    dispatch(gptToggle());
   }
 
   useEffect(() => {
@@ -55,10 +61,16 @@ const Header = () => {
     <div className='flex justify-between absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10'>
       <img 
         className='w-44'
-        src={LOGO} alt="Logo" />
+        src={LOGO} alt="Logo"
+      />
+
       { user && (<div className='flex items-center'>
+          <button
+            className='text-4xl text-white mr-3'
+            onClick={onSearchToggle}>⌕</button>
+
           <img src={user?.photoURL} alt='User Logo' 
-            className='w-12 h-12 rounded-sm object-cover mr-2' />
+            className='w-12 h-12 rounded-sm object-cover mx-2' />
             <button className='text-white' onClick={handleSignOut}>(Sign Out)</button>
         </div>
       )}
