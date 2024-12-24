@@ -27,6 +27,10 @@ const Header = () => {
   });
   }
 
+  const onHandleLogo = () => {
+    navigate('/browse');
+  }
+
   //language handle click
   const handleLanguageClick = (e) => {
     dispatch(languageChange(e.target.value))
@@ -69,12 +73,15 @@ const Header = () => {
       <img 
         className='w-44'
         src={LOGO} alt="Logo"
+        onClick= {onHandleLogo}
       />
 
       { user && (<div className='flex items-center'>
           <button
             className='text-4xl text-white mr-3'
-            onClick={onSearchToggle}>⌕</button>
+            onClick={onSearchToggle}>
+              { showGptSearch?'🏠︎':'⌕'}
+            </button>
 
           <img src={user?.photoURL} alt='User Logo' 
             className='w-12 h-12 rounded-sm object-cover mx-2' />

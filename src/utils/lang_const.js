@@ -1,12 +1,13 @@
 const lang = {
-    en: {
-        search:"Search",
-        searchPlaceholder: "What would you like to watch today?"
-    },
     hin: {
         search:"खोजें",
         searchPlaceholder: "आज आप क्या देखना चाहेंगे?"
     },
+    en: {
+        search:"Search",
+        searchPlaceholder: "What would you like to watch today?"
+    },
+    
     spa: {
         search: "Buscar",
         searchPlaceholder: "¿Qué quieres ver hoy?"

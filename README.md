@@ -29,12 +29,16 @@
 - Setting up a redux store
     - Create Movie Slice
     - Update store with movie list
+
 - Planning for main container and secondary container
 - Fetch data for Trailer Vdeo
 - Update store with Trailer video data
 - Embedded the youtube video and make it autoplay and mute
 - Developed the secondary container
 - built a slider on the movie list
+- GPT search page
+- GPT Search bar
+- Multi-Language Feature
 
 
 # Features
@@ -56,3 +60,4 @@
 - Netflix GPT
     - Search Bar
     - Movie Suggestions
+    - Multi-Language Feature

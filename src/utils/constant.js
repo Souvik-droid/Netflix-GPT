@@ -25,9 +25,9 @@ export const topRated_API_url = 'https://api.themoviedb.org/3/movie/top_rated?la
 export const upcoming_API_url = 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1';
 
 export const SUPPORTED_LANG = [
+  {identifier: "en", name: "English"},
   {identifier: "hin", name: "Hindi"},
   {identifier: "jap", name: "Japanese"},
-  {identifier: "en", name: "English"},
   {identifier: "spa", name: "Spanish"},
   {identifier: "fr", name: "French"},
   {identifier: "gr", name: "German"}
