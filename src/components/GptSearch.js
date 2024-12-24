@@ -7,7 +7,7 @@ const GptSearch = () => {
   return (
     <div className=' '>
         <img 
-            className="absolute -z-10" 
+            className="absolute -z-10 " 
             src={Login_bg} alt="login background" 
         />
         <GptSearchBar/>

@@ -14,7 +14,7 @@ const usePopularList = () => {
         const json = await data.json();
 
         //putting the data in the store
-        console.log("pop", json)
+        //console.log("pop", json)
         dispatch(addPopularList(json.results));
     }
     useEffect(() => {

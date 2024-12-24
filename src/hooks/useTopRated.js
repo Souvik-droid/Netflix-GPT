@@ -14,7 +14,7 @@ const useTopRatedMovies = () => {
         const json = await data.json();
 
         //putting the data in the store
-        console.log("pop", json)
+        //console.log("pop", json)
         dispatch(addtopRatedMovies(json.results));
     }
     useEffect(() => {
